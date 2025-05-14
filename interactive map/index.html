@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Interactive Map</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <h1>Interactive Map</h1>
+    <input id="searchInput" type="text" placeholder="Search any place..." />
+  </header>
+
+  <div id="map"></div>
+
+  <script src="script.js"></script>
+  <!-- Load Google Maps JS API with Places library -->
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCOy6gDT3dvTXgbNBvZm2BPZueynGGjPqI&libraries=places&callback=initMap" async defer></script>
+</body>
+</html>
