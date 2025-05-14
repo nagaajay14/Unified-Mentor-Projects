@@ -1,0 +1,228 @@
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #f0f4f8; /* Light background */
+    color: #1e293b; /* Dark text */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+h1 {
+    font-size: 2.5rem;
+    font-weight: 600; /* Semi-bold */
+    color: #4f46e5; /* Vibrant purple */
+    margin-bottom: 1.5rem;
+    text-align: center;
+    letter-spacing: -0.02em;
+}
+
+#timer-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: 0 6px 10px -2px rgba(0, 0, 0, 0.15), 0 3px 7px -3px rgba(0, 0, 0, 0.07); /* Refined shadow */
+    margin-bottom: 2rem;
+    width: 90%;
+    max-width: 600px; /* Responsive width */
+    box-sizing: border-box;
+}
+
+#input-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+#input-container label {
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: #6b7280; /* Gray label */
+    margin-bottom: 0.5rem;
+    display: block;
+    text-align: left;
+    width: 100%;
+}
+
+#datetime-input {
+    padding: 0.8rem;
+    font-size: 1rem;
+    border: 1px solid #d1d5db; /* Light border */
+    border-radius: 0.5rem;
+    width: 100%;
+    margin-bottom: 1rem;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease; /* Smooth transition */
+    box-sizing: border-box;
+}
+
+#datetime-input:focus {
+    outline: none;
+    border-color: #7c3aed; /* Purple focus border */
+    box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.15); /* Light purple shadow */
+}
+
+
+#start-button {
+    padding: 0.8rem 2rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    background-color: #8b5cf6; /* Purple button */
+    color: #fff;
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth transition */
+    width: 100%;
+    max-width: 200px; /* Limit button width */
+    box-sizing: border-box;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+#start-button:hover {
+    background-color: #7c3aed; /* Darker purple on hover */
+    transform: translateY(-0.125rem); /* Slight lift on hover */
+}
+
+#start-button:active {
+    background-color: #6d28d9; /* Even darker purple on active */
+    transform: translateY(0);
+     box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+
+#countdown-display {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    font-size: 2rem;
+    font-weight: 600;
+    color: #2e2e2e; /* Very dark gray */
+    margin-bottom: 1.5rem;
+    text-align: center;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+#countdown-display div {
+    background-color: #f9fafb; /* Very light background */
+    padding: 0.75rem;
+    border-radius: 0.5rem;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.06); /* Subtle inset shadow */
+    min-width: 80px; /* Ensure consistent width */
+    box-sizing: border-box;
+    border: 1px solid #e5e7eb;
+}
+
+#countdown-display span {
+    display: block;
+    font-size: 1rem;
+    font-weight: 400;
+    color: #a3a3a3; /* Medium gray */
+    margin-top: 0.5rem;
+}
+
+#message-container {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #1e293b; /* Dark text */
+    text-align: center;
+    margin-top: 1.5rem;
+    opacity: 0; /* Initially hidden */
+    transition: opacity 1s ease, transform 1s ease; /* Smooth transition */
+    border-radius: 0.5rem;
+    padding: 1rem;
+    background-color: #f0fdf4;
+    border: 1px solid #34d399;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.08), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+#message-container.show {
+    opacity: 1; /* Fade in */
+    transform: translateY(-1rem); /* Move up slightly */
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+.alert-visual {
+    animation: pulse 2s infinite; /* Apply pulse animation */
+    background-color: #fef08a;
+    border-color: #fde047;
+    color: #1e293b;
+}
+.alert-sound{
+   /* No specific visual styles, but the class is used in JS for playing sound */
+}
+
+ @media (max-width: 768px) {
+    #timer-container {
+        width: 95%;
+        padding: 1.5rem;
+    }
+    #countdown-display {
+        font-size: 1.75rem;
+        gap: 1rem;
+    }
+    #countdown-display div {
+        min-width: 70px;
+        padding: 0.5rem;
+    }
+    #input-container label{
+        font-size: 1rem;
+    }
+    #datetime-input{
+        font-size: 0.9rem;
+        padding: 0.7rem;
+    }
+    #start-button{
+        font-size: 1rem;
+        padding: 0.7rem 1.5rem;
+    }
+    h1{
+        font-size: 2.25rem;
+    }
+}
+
+@media (max-width: 480px) {
+    #timer-container {
+        width: 100%;
+        padding: 1rem;
+        border-radius: 0.75rem;
+    }
+    #countdown-display {
+        font-size: 1.25rem;
+        gap: 0.5rem;
+        flex-direction: column;
+    }
+    #countdown-display div {
+        min-width: 90%;
+        padding: 0.5rem;
+        margin-bottom: 0.5rem;
+    }
+    #input-container label {
+        font-size: 0.9rem;
+    }
+    #datetime-input {
+        font-size: 0.9rem;
+        padding: 0.7rem;
+    }
+    #start-button {
+        font-size: 1rem;
+        padding: 0.7rem 1.5rem;
+    }
+    h1{
+        font-size: 1.75rem;
+    }
+}
